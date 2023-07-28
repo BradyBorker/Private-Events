@@ -1,7 +1,10 @@
 <h1>Your Events!</h1>
 <div style="margin: 10px;">
     <% @user.events.each do |event| %>
-        <%= event.title %>
-        <%= event.body %>
+        <div style="display: flex; flex-direction: column; margin: 10px;">
+            <div><%= event.title %></div>
+            <div><%= event.date %></div>
+            <div><%= event.body %></div>
+        </div>
     <% end %>
 </div>

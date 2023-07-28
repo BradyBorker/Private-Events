@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     end
 
     def show
-       @event = Event.find(params[:id]) 
+       @event = Event.find(params[:id])
     end
 
     def new
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
         @event.creator = @user
 
         if @event.save
-            redirect_to users_path(@user)
+            redirect_to user_path(@user)
         else
             render :new, status: :unprocessable_entity
         end
