@@ -1,3 +1,7 @@
+<% if flash.any? %>
+    <%= flash[:alert] %>
+<% end %>
+
 <h1>Events:</h1>
 <% @events.each do |event| %>
     <div style="display: flex; flex-direction: column; margin: 10px;">

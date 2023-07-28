@@ -3,6 +3,12 @@ class AttendedEventsController < ApplicationController
         @user = User.find(current_user.id)
         @event = Event.find(params[:event_id])
 
-        @event.attendees << @user
+        begin
+            @event.attendees << @user
+            redirect_to user_path(@user)
+        rescue 
+            flash[:alert] = 'Unable to save event'
+            redirect_back(fallback_location: root_path)
+        end
     end
 end
