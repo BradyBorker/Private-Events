@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :created_events, class_name: 'Event', foreign_key: :creator_id, dependent: :destroy
+
+  has_many :attended_events
+  has_many :attending_events, through: :attended_events, scope: :event
 end
