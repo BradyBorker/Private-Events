@@ -1,6 +1,6 @@
 <h1>Your Events!</h1>
 <div style="margin: 10px;">
-    <% @user.events.each do |event| %>
+    <% @user.created_events.each do |event| %>
         <div style="display: flex; flex-direction: column; margin: 10px;">
             <div><%= event.title %></div>
             <div><%= event.date %></div>
