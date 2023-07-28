@@ -1,5 +1,7 @@
 <h1>Your Events!</h1>
-<% @user.events.each do |event| %>
-    <%= event.title %>
-    <%= event.body %>
-<% end %>
+<div style="margin: 10px;">
+    <% @user.events.each do |event| %>
+        <%= event.title %>
+        <%= event.body %>
+    <% end %>
+</div>
