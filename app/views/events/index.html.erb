@@ -1,7 +1,9 @@
 <h1>Events:</h1>
 <% @events.each do |event| %>
-    <div>
-        <%= event.title %>
-        <%= event.body %>
+    <div style="display: flex; flex-direction: column; margin: 10px;">
+        <div><%= event.creator.email %></div>
+        <div><%= event.title %></div>
+        <div><%= event.date %></div>
+        <div><%= event.body %></div>
     </div>
 <% end %>
