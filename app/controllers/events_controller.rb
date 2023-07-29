@@ -25,6 +25,14 @@ class EventsController < ApplicationController
         end
     end
 
+    def edit
+ 
+    end
+
+    def update
+
+    end
+
     private
 
     def event_params
