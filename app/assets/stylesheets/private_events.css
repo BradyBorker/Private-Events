@@ -1,0 +1,15 @@
+.flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    color: red;
+}
+
+.list-events {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+

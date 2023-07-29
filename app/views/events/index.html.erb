@@ -1,10 +1,16 @@
 <% if flash.any? %>
-    <%= flash[:alert] %>
+    <div class='flash'>
+        <%= flash[:alert] %>
+    </div>
 <% end %>
+
+<div>
+    
+</div>
 
 <h1>Upcoming Events:</h1>
 <% @events.future_events.each do |event| %>
-    <div style="display: flex; flex-direction: column; margin: 10px;">
+    <div class='list-events'>
         <div><%= link_to event.title, event_path(event) %></div>
         <div><%= event.date %></div>
         <div><%= event.body %></div>
@@ -14,7 +20,7 @@
 
 <h1>Past Events:</h1>
 <% @events.past_events.each do |event| %>
-    <div style="display: flex; flex-direction: column; margin: 10px;">
+    <div class='list-events'>
         <div><%= link_to event.title, event_path(event) %></div>
         <div><%= event.date %></div>
         <div><%= event.body %></div>
