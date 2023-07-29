@@ -1,0 +1,6 @@
+<div class='list-events'>
+        <div><%= link_to event.title, event_path(event) %></div>
+        <div><%= event.date %></div>
+        <div><%= event.body %></div>
+        <%= link_to 'Attend Event',  attended_events_path(event_id: event.id), data: { turbo_method: :post } %>
+</div>
