@@ -1,0 +1,12 @@
+<div class='header'>
+    <div class='link-container'>
+        <%= link_to 'All Events', root_path, class: 'link' %>
+        <%= link_to 'Create Event', new_event_path, class: 'link' %>
+        <% if user_signed_in? %>
+            <%= link_to 'My Events', user_path(current_user), class: 'link' %>
+            <%= link_to 'Sign Out', destroy_user_session_path, data: { 'turbo_method': :delete } %>
+        <% else %>
+            <%= link_to 'Sign In', new_user_session_path, class: 'link' %>
+        <% end %>
+    </div>
+</div>
