@@ -5,11 +5,10 @@ class AttendedEventsController < ApplicationController
 
         begin
             @event.attendees << @user
-            redirect_to redirect_back(fallback_location: root_path)
         rescue 
             flash[:alert] = 'Unable to save event'
-            redirect_back(fallback_location: root_path)
         end
+        redirect_back(fallback_location: root_path)
     end
 
     def destroy
