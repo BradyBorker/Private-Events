@@ -16,17 +16,19 @@
 </div>
 
 <h1>Upcoming Events:</h1>
-<div style="margin: 10px;">
+<ul style='margin: 10px;'>
     <% @user.attending_events.future_events.each do |event| %>
-        <%= link_to event.title, event_path(event) %>
+        <li style='margin: 10px;'><%= link_to event.title, event_path(event) %></li>
+        <%= link_to 'Unattend Event', attended_event_path(event), data: { 'turbo_method': :delete } %>
     <% end %>
-</div>
+</ul>
 
 <h1>Past Events:</h1>
-<div style="margin: 10px;">
+<ul style='margin: 10px;'>
     <% @user.attending_events.past_events.each do |event| %>
-        <%= link_to event.title, event_path(event) %>
+        <li style='margin: 10px;'><%= link_to event.title, event_path(event) %></li>
+        <%= link_to 'Unattend Event', attended_event_path(event), data: { 'turbo_method': :delete } %>
     <% end %>
-</div>
+</ul>
 
 
