@@ -1,7 +1,12 @@
 class AttendedEventsController < ApplicationController
+    def new
+        @attended_event = AttendedEvent.new
+        @event_id = params[:event]
+    end
+    
     def create
-        @user = User.find(current_user.id)
-        @event = Event.find(params[:event_id])
+        @user = User.find(params[:attended_event][:user_id])
+        @event = Event.find(params[:attended_event][:event_id])
 
         begin
             @event.attendees << @user

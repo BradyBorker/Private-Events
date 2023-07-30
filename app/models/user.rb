@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :attended_events
   has_many :attending_events, through: :attended_events, source: :event
+
+  scope :all_except, ->(user) { where.not(id: user) }
 end

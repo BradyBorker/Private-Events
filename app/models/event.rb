@@ -6,4 +6,5 @@ class Event < ApplicationRecord
 
     scope :past_events, -> { where('date < ?', Time.now) }
     scope :future_events, -> { where('date >= ?', Time.now) }
+    scope :not_private, -> { where('private == 0') }
 end

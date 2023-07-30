@@ -11,5 +11,9 @@
         <%= form.label :date, "Event Date" %>
         <%= form.date_select :date %>
     </div>
+    <div>
+        <%= form.label :private, "Private Event?" %>
+        <%= form.check_box :private %>
+    </div>
     <%= form.submit "Submit" %>
 <% end %>

@@ -7,11 +7,11 @@
 <%= render "header" %>
 
 <h1>Upcoming Events:</h1>
-<% @events.future_events.each do |event| %>
+<% @events.not_private.future_events.each do |event| %>
     <%= render "list_events", event: event %>
 <% end %>
 
 <h1>Past Events:</h1>
-<% @events.past_events.each do |event| %>
+<% @events.not_private.past_events.each do |event| %>
     <%= render "list_events", event: event %>
 <% end %>

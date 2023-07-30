@@ -4,10 +4,11 @@
 <div style="margin: 10px;">
     <% @user.created_events.each do |event| %>
         <div style="display: flex; flex-direction: column; margin: 10px;">
-            <div><%= event.title %></div>
+            <div><%= link_to event.title, event_path(event) %></div>
             <div><%= event.date %></div>
             <div><%= event.body %></div>
             <div>
+                <%= link_to "Invite", new_attended_event_path(event: event) %>
                 <%= link_to "Edit", edit_event_path(event) %>
                 <%= link_to "Delete", event_path(event), data: { 'turbo_method': :delete, 'turbo_confirm': 'Are you sure?' } %>
             </div>

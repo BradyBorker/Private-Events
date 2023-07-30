@@ -1,0 +1,11 @@
+<%= render "header" %>
+
+<%= form_with model: @attended_event do |form| %>
+    <div>
+        <%= form.label :user_id, "Invite User" %>
+        <%= form.text_field :user_id, placeholder: "Enter user ID" %>
+        <%= form.hidden_field :event_id, value: @event_id %>
+    </div>
+    <%= form.submit "Invite User" %>
+<% end %>
+    
