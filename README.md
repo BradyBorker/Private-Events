@@ -18,5 +18,8 @@ How they connect to each other
 </ul>
 
 And how to use them for better-querying
-    @user.attending_events.future_events
-    @events.not_private.future_events
+
+```
+@user.attending_events.future_events
+@events.not_private.future_events
+```
